@@ -1,0 +1,55 @@
+\documentclass[12pt]{book}
+
+\newcommand{\bhtAuthor}{Wilfried Pahl}
+\newcommand{\bhtTitle}{Klassifizierung für E-Commerce Nutzergruppen auf Basis von Data Mining unter Verwendung von künstlicher Intelligenz.}
+\newcommand{\bhtSubtitle}{Untersuchung der Nutzerklassifizierung durch Datenanalyse}
+\newcommand{\bhtDocumentType}{Masterarbeit}
+\newcommand{\bhtDegree}{Master of Science (M.Sc.)}
+\newcommand{\bhtMatriculationNumber}{901932}
+\newcommand{\bhtCourse}{Online Medieninformatik}
+\newcommand{\bhtTown}{Temmen-Ringenwalde}
+\newcommand{\bhtUniversity}{Berliner Hochschule für Technik}
+
+\newcommand{\bhtContributorFirst}{Prof. Dr. S. Edlich ~Berliner Hochschule für Technik}
+\newcommand{\bhtContributorSecound}{noch nicht bekannt ~auch von einer Hochschule}
+
+\include{content/structure/header-german-definitions}
+\include{content/structure/header-colors-graphics}
+\include{content/structure/header-page-layout}
+\include{content/structure/header-links-refs}
+\include{content/structure/header-font-styles}
+\include{content/structure/header-watermark}
+
+\usepackage{glossaries}
+\include{content/glossary}
+\makeglossaries
+
+\usepackage{makeidx}
+\makeindex
+
+\begin{document}
+	\frontmatter % only for documentclass book
+	\input{content/titlepage.tex}
+
+	\input{content/abstract_de.tex}
+	\newpage
+
+	\input{content/abstract_en.tex}
+	\newpage
+	
+	\input{content/thanksgiving.tex}
+	\newpage
+	
+	\input{content/affidavit.tex}
+	\newpage
+
+	\input{content/frontmatter.tex}
+	
+	\mainmatter  % only for documentclass book
+	%\pagestyle{fancy}
+	\input{content/mainmatter.tex}
+	
+	\backmatter % only for documentclass book
+	\appendix
+	\input{content/backmatter.tex}
+\end{document}
