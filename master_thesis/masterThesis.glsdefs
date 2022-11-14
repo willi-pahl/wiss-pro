@@ -1,0 +1,30 @@
+\ifglsentryexists{Accro_ml}{}%
+{%
+\gls@defglossaryentry{Accro_ml}%
+{%
+name={ML},%
+sort={ML},%
+type={main},%
+first={Machine Learning\glsspace (ML)},%
+firstplural={Machine Learnings\glsspace (MLs)},%
+text={ML},%
+plural={MLs},%
+description={Machine Learning},%
+descriptionplural={Machine Learning\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Machine Learning},%
+longplural={Machine Learnings},%
+short={ML},%
+shortplural={MLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
