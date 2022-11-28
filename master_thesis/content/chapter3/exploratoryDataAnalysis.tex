@@ -1,9 +1,69 @@
 \chapter{Explorative Datenanalyse}
-Das wichtigste beim maschinellen Lernen sind die Daten. Beim erheben der Daten für maschinelles Lernen sollten die Datensätze nicht aus kontrollierten Umgebungen stammen die mit festgelegten Rahmenbedingungen arbeiten. Sonst können die Algorithmen unter realen Bedingungen schlecht abschneiden, da hier andere Daten von den Trainingsdaten zu stark abweichen.
-%\section{Probleme und Lösungsansätze}
-%\section{Methodiken und Vorgehen}
-%\section{Architektur}
-%\section{Algorithmen}
-%Hier wird der k-Means-Algorithmus erläuter.
+Das Wichtigste beim maschinellen Lernen sind die Daten. Beim Erheben der Daten für maschinelles Lernen sollten die Datensätze nicht aus kontrollierten Umgebungen stammen die mit festgelegten Rahmenbedingungen arbeiten. Sonst können die Algorithmen unter realen Bedingungen schlecht abschneiden, da hier andere Daten von den Trainingsdaten zu stark abweichen. Daher sollte man die Daten kennen die verwendet werden sollen.\vspace{0.2cm}
 
-%Klassifizierung für E-Commerce Nutzergruppen auf Basis von Data Mining unter Verwendung künstlicher Intelligenz
+Die explorative Datenanalyse (\Gls{eda}) wird verwendet, um Daten zu analysieren und ihre Merkmale zusammenzufassen und um besseres Verständnis für die Datensätze zu bekommen. Dies hilft dabei, um herauszufinden wie die Daten am besten verarbeitet werden können. Dabei hilft die \Gls{eda}, Muster oder Fehler und Anomalien zu finden, sowie Hypothesen testen und Annahmen zu überprüfen.\vspace{0.2cm}
+
+Sind die analysiert können sie mithilfe, beispielsweise von maschinelles Lernen verarbeitet werden.
+
+\section{Arten der EDA}
+Primär unterschiedet [1] vier Arten der \Gls{eda}.\\(zu [1] https://www.ibm.com/de-de/cloud/learn/exploratory-data-analysis)\vspace{0.2cm}
+
+\textbf{Univariat, nicht-grafisch}\\
+Untersucht nur eine Variable und ist somit die einfachste Form der Datenanalyse. Hierbei geht es nicht um Ursachen Forschung oder Finden von Beziehungen, sondern das Beschreiben der Daten und Muster zu finden.\vspace{0.2cm}
+
+\textbf{Univariat, grafisch}\\
+In dieser Art gibt es beispielsweise die Möglichkeit eine Variable beispielsweise in einem
+\begin{itemize}
+	\item Stamm-Blatt-Kurvendiagramm\footnote{Stamm-Blatt-Kurvendiagramm zeigt die alle Datenwerte und die Form der Verteilung.},
+	\item Histogramm\footnote{Histogramm mit Balken wird die Häufigkeit oder Anteil der Fälle für einen Wertebereich angezeigt.} oder
+	\item Box-Diagramm\footnote{Box-Diagramm fünfstellige Zusammenfassung von 1. Minimum, 2. erstes Quartils, 3. Median, 4. dritten Quartils, 5. Maximum.} dargestellt.
+\end{itemize}
+
+\textbf{Multivariat, nicht-grafisch}\\
+Diese Daten bestehen aus mehreren Variablen. Sie zeigen allgemeine Beziehungen zwischen zwei oder mehreren Variablen durch Kreuztabellen oder Statistiken.\vspace{0.2cm}
+ 
+\textbf{Multivariat, grafisch}\\
+Zeigen grafisch die Beziehungen zwischen ein oder mehreren Variablen. Häufig werden zur Darstellung Streu-\footnote{Streudiagramm, stellen Datenpunkte auf einer horizontalen und einer vertikalen Achse, die Abhängigkeit einer Variablen zu einer anderen zu zeigen.}, Lauf-\footnote{Laufdiagramm ist ein Liniendiagramm von Daten die über die Zeit aufgetragen werden.}, Blasendiagramme\footnote{Blasendiagramm ist eine Datenvisualisierung mittels Kreisen.}, Multivariate Diagramme\footnote{Multivariate Diagramm ist eine grafische Darstellung zwischen Faktoren und einer Antwort.} und Heat-Maps\footnote{Heat-Map hierbei werden die Daten durch Farben dargestellt.} verwendet.
+
+\section{Methoden der Datenanalyse}
+
+\section{Kundengruppen}
+
+\subsection{DiSG Modell}
+Wichtig das DISG-Modell (dominant, initiativ, stetig, gewissenhaft)
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=\linewidth]{images/chapter3/disg-uebersicht.eps}
+	\caption{DiSG Übersicht \href{https://www.disg-modell.de/persoenlichkeitsorientiertes-lernen-mit-dem-disg-modell}{https://www.disg-modell.de}}
+	\label{img:disg_overview}
+\end{figure}
+
+Der \textit{Dominante}, hat konkrete Erwartungen an ein Produkt. Daher sollte eine Produktbeschreibung nicht nur klar und deutlich sein, sonder ebenso dessen Nutzen, welche Funktionen es hat, warum es so gut funktioniert und die wie es die Probleme des Kunden löst.\vspace{0.2cm}
+
+Der \textit{Initiative} Kundentyp ist begeisterungsfähig, extrovertiert und optimistisch. Da dieser Typ eher die positiven Eigenschaften eines Produktes sieht, lohnt es sich diesen Kundentyp Rezensionen schreiben zu lassen. Er legt Wert auf eine Wertbeschreibung des Produktes. Dies kann mit \Gls{storytelling} erfolgen.\vspace{0.2cm}
+
+Der \textit{Stetige} kann eine harte Nuss für Onlinehändler sein, da dieser Kundentyp sehr viel Wert auf Produktbeschreibung legt, die dessen Bedürfnisse und Ziele erfasst. Andererseits ändern sich die Bedürfnisse dieses Typs nicht über Nacht. Somit kann er zu einem regelmäßigen kaufenden Stammkunden werden. Die Produktbeschreibung sollte die \Gls{unique_selling_point} enthalten und herausstellen welche Ziele das Produkt, wie unterstützt.\vspace{0.2cm}
+
+Der \textit{Gewissenhafte} geht systematisch vor und analysiert seine Erkenntnisse zum Produkt. Ist eher reserviert und zurückhaltend und schreibt somit weniger Rezensionen. Dieser Typ kann mit Daten und Fakten überzeugt werden. Dies sollte mit Anwendungsbeispielen und Studienergebnissen untermauert werden.
+
+\subsection{Mögliche Kundengruppen}
+Nach \href{https://www.exali.de/Info-Base/ki-onlineshop}{KI im Onlineshop: So steigern Onlinehändler ihren Umsatz}\vspace{0.2cm}
+
+Der \textit{Performer} (hat ernste Kaufabsicht und weiß genau was er will) nutzt Suchfunktion und geht gleich in die Kategorie. «Diesem Kunden kann die Suchfunktion besonders angezeigt werden, da er zielstrebig etwas sucht. Findet er es nicht, sucht er auf anderen Seiten weiter.»\vspace{0.2cm}
+
+Der \textit{Stöberer} (will sich beim stöbern inspirieren lassen) klick auf der Startseite viel herum. «Diesem Kunden könnten Angebote angezeigt werden, die diesem Kunden zum Kauf anregen.»\vspace{0.2cm}
+
+Nach \href{https://www.businessinsider.de/gruenderszene/allgemein/kundentypen-comarch}{Die 6 häufigsten Kundentypen und wie man sie am besten anspricht}\vspace{0.2cm}
+
+Der \textit{Schnäppchenjäger} (Hautsache Preiswert) dieser Kunde baut keine richtige Beziehung  zu einem Onlineshop auf. Diese Kunden besuchen meist mehrere Webshops und/oder kommen von Preissuchmaschinen. Diesen Kunden zu binden ist eine Herausforderung. «Dieser Kunde kann effektiv mit Rabatte, Gutscheincodes oder Ausverkaufsaktionen ansprechen. Auch E-Mail-Aktionen lassen sich bei diesem Kundentyp leicht anbringen.»\vspace{0.2cm}
+
+Der \textit{Eilige} (stehen unter Zeitdruck oder wollen sie sich nicht nehmen) bringt keine Zeit für ein ausgiebiges Shoppingerlebnis mit. Sie verfügen oft über hohe monetäre Mittel, um sich beispielsweise Expresslieferung zu leisten.«Er braucht eine strukturierte Webseite, auf die er Informationen schnell findet. Dies kann durch Suchfunktion für Preis, Größe, usw., eine Schnellansicht für Artikel auf der Übersichtseite mit deutlichem Produktabbildungen.»\vspace{0.2cm}
+
+Der \textit{Stöberer} (sind Gelegenheitskäufer) schaut stundenlang im Internet ohne bestimmte Absicht. Hierbei ist es schwer vorhersagbar, was dieser Kunde kauft. Oft legt dieser Kunde ein oder zwei Artikel in den Warenkorb, schließt die Bestellung nie ab.«Diese Kunden kennen die Preise im Internet und lassen sich evtl. durch ein Rabattangebot oder Preisnachlass umstimmen.»\vspace{0.2cm}
+
+Der \textit{Sammler} (auf der Suche nach Besonderheiten) sucht Unikaten oder ganz bestimmte Artikel wie Sondereditionen oder limitierte Ausgaben. Lieferzeiten und Preise spielen keine Rolle. «Bei diesem Kunden sollten Lagerinformationen stets aktuell sein. Ist nach dem Bestellvorgang ersichtlich, dass der Artikel nicht mehr vorhanden ist, wird meist storniert und der Kunde kommt nicht mehr wieder.»\vspace{0.2cm}
+
+Der \textit{Misstrauische} (Angst Oper zu werden) ziehen große bekannte Onlinehändler vor, da sie befürchten das bei kleineren Probleme auftreten können. Das Misstrauen geht so weit, das dieser Kundentyp nur per Nachname bestellt oder die Ware Selbst abholt. «Dieser Zielgruppe sind Rückgaberecht und Garantieleistungen besonders wichtig. Ebenfalls können diese Kunden durch zusätzliche Versicherungen gewonnen werden.»\vspace{0.2cm}
+
+Der \textit{Schüchterne} (anonym ist wichtig) kaufen online, da es ihnen peinlich ist, den gesuchten Artikel im stationären Handel zu kaufen. «Diese Kunden nutzen häufig Suchmaschinen und gelangen so in den Shop (SEO ist hier wichtig). Ein weiteres Kriterium für den Schüchternen sind seriöse Bezahl- und Versandarten.»
