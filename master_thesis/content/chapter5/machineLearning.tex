@@ -40,153 +40,77 @@ Ein Computerprogramm interagiert mit einer dynamischen Umgebung. Beim Ausführen
 Als Algorithmen sind hier beispielsweise Q-Learning, Deep Q Network (DQN) und State-Action-Reward-State-Action (SARSA) zu nennen.
 
 \section{Algorithmen zum Analysieren von Onlineshop Daten}
-Die verwendeten Algorithmen des maschinellen Lernens können durch ihre Ähnlichkeiten gruppiert werden. In den folgenden Kapiteln werden diese wie in [\href{https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms}{machinelearningmastery.com}] diskutiert.
-
-\subsection{Regressionsalgorithmen}
-(eng. Regression Algorithms)\vspace{0.2cm}
-
-Durch die interaktive Verwendung eines Fehlmaßes erfolgt eine Verfeinerung des Algorithmus, der Regressionsalgorithmen (eng. Regression Algorithms) befasst sich mit den Beziehungen zwischen Variablen.\vspace{0.2cm}
-
-Wichtige Algorithmen
+Für die Ermittlung der Klassifizierung werden Daten verwendet, bei denen ein Nutzer einen Kauf abgeschlossen hat. Die folgenden Daten werden berücksichtigt,
 \begin{itemize}
-	\item Ordinary Least Squares Regression (OLSR)
-	\item Linear Regression
-	\item Logistic Regression
-	\item Stepwise Regression
-	\item Multivariate Adaptive Regression Splines (MARS)
-	\item Locally Estimated Scatterplot Smoothing (LOESS)
+	\item 
+	\item Warenkorbhöhe
+	\item Gekauften Artikel pro Warenkorb
+	\item Anzahl der zuvor besuchten Seiten
+	\item Einstiegsseite
+	\item Datum
 \end{itemize}
+Diese Daten werden im FP-Growth-Algorithmus und mittels neuronalen Netzwerk ausgewertet und im Anschluss verglichen.
 
-\subsection{Instanz-basierende Algorithmen}
-(Instance-based Algorithms)\vspace{0.2cm}
+\subsection{FP-Growth-Algorithmus}
+FP-Growth steht für Frequent Pattern (deutsch: häufige Muster). Er ist eine Verbesserung des Apriori Algorithmus da und stellt die Daten in einer Baumstruktur dar, mit den häufigsten Muster. Dabei repräsentiert jedes Blatt des Baumes ein Item eines Itemsets.\vspace{0.2cm}
 
-Algorithmen
-\begin{itemize}
-	\item k-Nearest Neighbor (kNN)
-	\item Learning Vector Quantization (LVQ)
-	\item Self-Organizing Map (SOM)
-	\item Locally Weighted Learning (LWL)
-	\item Support Vector Machines (SVM)
-\end{itemize}
+Der FP-Growth ist ein schnell arbeitender Algorithmus, der gut skalieren ist und auch versteckte Muster in Datensätzen findet. Der Algorithmus arbeitet effizienter als beispielsweise der Apriori Algorithmus oder die TreeProjection.\vspace{0.2cm}
 
-\subsection{Regularisierungsalgorithmen}
-(eng. Regularization Algorithms)\vspace{0.2cm}
+Der Nachteil dieses Algorithmus ist, dass er sehr komplex ist und für kleine Datenmengen Algorithmen wie beispielsweise der bereits genannte Apriori Algorithmus ausreicht.\vspace{0.2cm}
 
-Algorithmen
-\begin{itemize}
-	\item Ridge Regression
-	\item Least Absolute Shrinkage and Selection Operator (LASSO)
-	\item Elastic Net
-	\item Least-Angle Regression (LARS)
-\end{itemize}
+Dieser Algorithmus wird unter anderem von Apache Spark [\href{https://spark.apache.org/docs/latest/ml-frequent-pattern-mining.html}{1}] eingesetzt.
 
-\subsection{Entscheidungsbaumalgorithmen}
-(eng. Decision Tree Algorithms)\vspace{0.2cm}
+\subsection{Neuronales Netz}
+Bei neuronalen Netzen handelt es sich um dem Nervensystem nachempfundenes Netz. Die Idee stammt aus der Neurobiologie und soll die Signale weiterleiten. Dadurch soll ein neuronales Netz in die Lage versetzt werden abstrakte Konzepte zu erlernen. Die Übermittlung der Signale von einem Neuron zum nächsten kann bei künstlicher Intelligenz nur bei trainierten Netzen erfolgen.
 
-Algorithmen
-\begin{itemize}
-	\item Classification and Regression Tree (CART)
-	\item Iterative Dichotomiser 3 (ID3)
-	\item C4.5 and C5.0 (different versions of a powerful approach)
-	\item Chi-squared Automatic Interaction Detection (CHAID)
-	\item Decision Stump
-	\item M5
-	\item Conditional Decision Trees
-\end{itemize}
+\subsubsection{Einsatzzwecke für neuronale Netze}
+Prinzipiell gibt es drei Hauptanwendungen für neuronale Netze. Die Abbildung \ref{img:types_of_ml} zeigt deren Verwendungszwecke.\vspace{0.2cm}
 
-\subsection{Bayessche Algorithmen}
-(eng. Bayesian Algorithms)\vspace{0.2cm}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=\linewidth]{images/chapter5/ml_types.eps}
+	\caption{Übersicht zu neuronalen Netzen und ihrer Verwendung}
+	\label{img:types_of_ml}
+\end{figure}
 
-Algorithmen
-\begin{itemize}
-	\item Gaussian Naive Bayes
-	\item Multinomial Naive Bayes
-	\item Averaged One-Dependence Estimators (AODE)
-	\item Bayesian Belief Network (BBN)
-	\item Bayesian Network (BN)
-\end{itemize}
+\textit{Classification (Supervised Machine Learning)} das Netz wird mit Trainingsdaten trainiert und berechnet für neue Datensätze die Kategorie, in der die Informationen eines Datensatzes passen.\vspace{0.2cm}
 
-\subsection{Clustering-Algorithmen}
-(eng. Clustering Algorithms)\vspace{0.2cm}
+\textit{Regiession (Supervised Machine Learning)} ähnlich wie bei der Classification werden diese Netze trainiert, um Vorhersagen zu treffen. Beispielsweise für optimale Preise, Retouren und Umsatzzahlen.\vspace{0.2cm}
 
-Algorithmen
-\begin{itemize}
-	\item k-Means
-	\item k-Medians
-	\item Expectation Maximisation (EM)
-	\item Hierarchical Clustering
-\end{itemize}
+\textit{Clustering (Unsupervised Machine Learning)} erkennt Gruppen anhand ähnlicher Merkmale. Diese Netze benötigen kein Training, da nur die reinen Informationen innerhalb der Datensätze nutzen, um Muster zuerkennen.
 
-\subsection{Lernalgorithmen für Assoziationsregeln}
-(eng. Association Rule Learning Algorithms)\vspace{0.2cm}
+\subsubsection{Arten von neuronalen Netzen}
+\textit{Perception} sind die einfachsten Netze. Sie bestehen nur aus einem Input-Layer und einer Aktivierungsfunktion im Output-Layer. Hidden-Layer gibt es hierbei nicht.\vspace{0.2cm}
 
-Algorithmen
-\begin{itemize}
-	\item Apriori algorithm
-	\item Eclat algorithm
-\end{itemize}
+\textit{Feedforward artificial neural network (FFNN)} hierbei bewegen sich die Signale in eine Richtung. Diese Netze besitzen aber auch Hidden-Layer.\vspace{0.2cm}
 
-\subsection{Neuronale Netze}
-(eng. Artificial Neural Network Algorithms)\vspace{0.2cm}
+\textit{Deep Learning (DL)} diese Netze besitzen mehrere Hidden-Layer Schichten.\vspace{0.2cm}
 
-Algorithmen
-\begin{itemize}
-	\item Perceptron
-	\item Multilayer Perceptrons (MLP)
-	\item Back-Propagation
-	\item Stochastic Gradient Descent
-	\item Hopfield Network
-	\item Radial Basis Function Network (RBFN)
-\end{itemize}
+\textit{Recurrent neural networks (RNN)} betrachten, im Vergleich zu den FFNN Netzen auch temporäre Sequenzen, indem sie Informationen zwischenspeichern. Sie gelten deshalb als einer der stärksten neuronalen Netze.\vspace{0.2cm}
 
-\subsection{Depp-Learning-Algorithmen}
-(eng Deep Learning Algorithms)\vspace{0.2cm}
+\textit{Symmetrically connected neural network} sind aufgebaut wie RNN’s haben aber eine symmetrische Topologie in der Anordnung und Zuweisung der Gewichte.\vspace{0.2cm}
 
-Algorithmen
-\begin{itemize}
-	\item Convolutional Neural Network (CNN)
-	\item Recurrent Neural Networks (RNNs)
-	\item Long Short-Term Memory Networks (LSTMs)
-	\item Stacked Auto-Encoders
-	\item Deep Boltzmann Machine (DBM)
-	\item Deep Belief Networks (DBN)
-\end{itemize}
+\textit{Convoluted neural networks (CNN)} diese Netze betrachten die Signale nicht linear, sondern betrachte regionale Signale. Dadurch werden Ergebnisse genauer und das Training wird schneller und effizienter.\vspace{0.2cm}
 
-\subsection{Dimensionsreduktionsalgorithmen}
-(eng. Dimensionality Reduction Algorithms)\vspace{0.2cm}
+\textit{Radial basis function network (RBFN)} sind einfache FFNN Netzwerke die aber die Distanz zwischen den Knoten miteinbeziehen.\vspace{0.2cm}
 
-Algorithmen
-\begin{itemize}
-	\item Principal Component Analysis (PCA)
-	\item Principal Component Regression (PCR)
-	\item Partial Least Squares Regression (PLSR)
-	\item Sammon Mapping
-	\item Multidimensional Scaling (MDS)
-	\item Projection Pursuit
-	\item Linear Discriminant Analysis (LDA)
-	\item Mixture Discriminant Analysis (MDA)
-	\item Quadratic Discriminant Analysis (QDA)
-	\item Flexible Discriminant Analysis (FDA)
-\end{itemize}
+\textit{Self organizing neural network} finden Verwendung, um Strukturen innerhalb von Datensätzen zu finden. Diese Netze arbeiten unsupervised.
+Moduar neural network kombinieren mehrere neurale Netzwerke, um verschiedene Teilaufgaben zu lösen.\vspace{0.2cm}
 
-\subsection{Ensemble-Algorithmen}
-(eng. Ensemble Algorithms)\vspace{0.2cm}
+\textit{Generative adversarial networks (GAN)} generieren aus den zu lernenden Daten neue Daten. Hier werden zwei Netze kombiniert. Ein Netz generiert Daten das andere Netz überprüft diese.
 
-Algorithmen
-\begin{itemize}
-	\item Boosting
-	\item Bootstrapped Aggregation (Bagging)
-	\item AdaBoost
-	\item Weighted Average (Blending)
-	\item Stacked Generalization (Stacking)
-	\item Gradient Boosting Machines (GBM)
-	\item Gradient Boosted Regression Trees (GBRT)
-	\item Random Forest
-\end{itemize}
+\subsubsection{Aufbau des neuronalen Netzes}
+In dieser Arbeit wird das Feedforward artificial neural network (FFNN) verwendet. Die einzelnen Nervenzellen werden hierbei als Neuronen bezeichnet und sind Funktionen die auf Basis des Inputs und der Gewichtung den Output berechnen. Die Schichten auf denen die Neuronen liegen als Layer. Bei den Layern gibt die Input-Layer, den oder die Hidden-Layer und den Output-Layer. Die Neuronen der einzelnen Layer sind mit Kanten untereinander verbunden, welche mit Gewichtungen, die Ausgaben für das nächste Neuron umrechnet.
+\subsubsection{Training neuronaler Netze}
+Zuerst erfolgt die Übergabe der Kundenattribute an die Input-Neuronen. Die Attribute enthalten die Bestelldaten, Daten zum Nutzerverhalten und zusätzlichen externen Daten.\vspace{0.2cm}
+
+Zunächst wird das Netz trainiert. Die Initialisierung der Gewichtig muss gut überlegt sein, da es sonst dazu führen kann, das das Netz langsam lernt oder alle Hidden-Layer das gleiche lernen. Nur wird das Netz mit dem Input geladen und iterativ werden die Gewichte der Kanten definiert. Die Signale werden durch die Layer zum Output-Layer geleitet, also zum Ende hin. Dieses Verfahren wird auch als Forward Propagation bezeichnet. Hier sei noch einmal auf die Datenqualität hingewiesen. Ist die Datenqualität schlecht oder stehen nicht genügend Daten zur Verfügung kann das nicht oder schlecht trainiert werden. Sind die Signale am Output-Layer angekommen, definieren Aktivierungsfunktionen (eng. Activation Function), ob das Netz feuert oder nicht.\vspace{0.2cm}
+
+Nun wird der Output des neuronalen Netzes mit den vorher definierten Ausgaben. Bei einer Abweichung wird dann rückwärts durch das Netz propagiert (eng. Back Propagation) und das Netz lernt daraus. D. h. die Gewichte werden angepasst. Der Vorgang des Inputs laden, Fehler berechnen und Gewichte korrigieren, wird so lange wiederholt, bis ein festgelegtes Abbruchkriterium greift. Nun ist das Netz trainiert.
 
 \section{Umsetzung der Datenverarbeitung}
 %So was wie Daten bereinigen und zusammenführen.
-Erste Tests in Sachen Python und Datenanalyse.
+Erste Tests in Sachen Python und Datenanalyse. Kommt ein Kapitel früher.
 
 \begin{figure}[!ht]
 	\centering
@@ -195,4 +119,11 @@ Erste Tests in Sachen Python und Datenanalyse.
 	\label{img:plot_count_amount}
 \end{figure}
 
-\section{Umsetzung der Clusterung}
+\section{Umsetzung ds FP-Grwoth-Algorithmus}
+Zur Analyse der zusammen verkauften Artikel und Assoziationsregeln zum Nutzerverhalten aufstellen zu können und einen Merkmals-Vektor zu erstellen, um auf dessen Grundlage die Benutzerklassifizierung zu ermitteln.\vspace{0.2cm}
+
+Im ersten Schritt werden alle vorbereiteten Datensätze durchlaufen, um die Anzahl der Items zu finden, die für die Klassifizierung der Nutzer erforderlich ist. Im Anschluss werden alle Items erfasst, die den minimalen Support erfüllen. Anschließend werden die Datensätze wiederholt durchsucht und nach den minimalen Support-Items gesucht.\vspace{0.2cm}
+
+Daraus wird der Häufigkeitsbaum erstellt, in dem alle Items und Datensätze abgebildet werden.
+
+\section{Umsetzung mittels neuronalen Netz}
